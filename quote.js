@@ -24,7 +24,7 @@
 		}
 
 		//cut the signature
-		var signPosition = text.lastIndexOf('-- ');
+		var signPosition = text.lastIndexOf('\n-- \n') + 1;
 		if (signPosition > 0) {
 			text = text.substr(0, signPosition);
 		}
