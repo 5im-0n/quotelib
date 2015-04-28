@@ -11,7 +11,7 @@
 		}
 
 		//this must be after the code before, because this inserts a space in the string
-		return qc + line.replace(/~+$/, ''); //trimRight
+		return qc + line.replace(/ +$/, ''); //trimRight
 	};
 
 
@@ -33,7 +33,7 @@
 			//if this is already quoted text, return it as is,
 			//but trim the right spaces (thunderbird does this)
 			if (validquotechars.indexOf(v.charAt(0)) > -1) {
-				return quotechar + v.replace(/~+$/, ''); //trimRight
+				return quotechar + v.replace(/ +$/, ''); //trimRight
 			}
 
 			return quoteline(v, length, quotechar + ' ');
@@ -75,7 +75,7 @@
 			//if this is already quoted text, return it as is,
 			//but trim the right spaces (thunderbird does this)
 			if (validquotechars.indexOf(v.charAt(0)) > -1) {
-				return v.replace(/~+$/, ''); //trimRight
+				return v.replace(/ +$/, ''); //trimRight
 			}
 
 			return rewrapper(v, length);
